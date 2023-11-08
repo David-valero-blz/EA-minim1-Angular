@@ -20,6 +20,8 @@ import { NavigationComponent } from './navbar/navbar.component';
 import { EventAddComponent } from './event-add/event-add.component';
 import { UserAddComponent } from './user-add/user-add.component';
 import { CabeceraComponent } from './cabecera/cabecera.component';
+import { IssueListComponent } from './issue-list/issue-list.component';
+import { IssueAddComponent } from './issue-add/issue-add.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { CabeceraComponent } from './cabecera/cabecera.component';
     NavigationComponent,
     EventAddComponent,
     UserAddComponent,
-    CabeceraComponent
+    CabeceraComponent,
+    IssueListComponent,
+    IssueAddComponent
 ],
   imports: [
     BrowserModule,
