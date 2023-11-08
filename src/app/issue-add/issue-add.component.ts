@@ -1,17 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+import { Issue } from '../issue';
+import { IssueService } from '../issue.service';
 
 @Component({
   selector: 'app-issue-add',
   templateUrl: './issue-add.component.html',
-  styleUrls: ['./issue-add.component.css']
+  styleUrls: ['./issue-add.component.css'] //issueAdd: any = {}; 
 })
-export class IssueListComponent {
+export class IssueAddComponent {
   issueAdd: any = {}; 
+
 
   constructor(
     //private route: ActivatedRoute,
-    private IssueService: IssueListComponent,
-    private location: Location,
+    private route: ActivatedRoute,
+    private IssueService:IssueService,
     
   ) {
   }
@@ -19,15 +24,15 @@ export class IssueListComponent {
   }
 
   goBack(): void {
-    this.location.back();
+   // this.location.back();
   }
 
   save(): void {
 
-    this.issueAdd.birthDate = new Date(this.issueAdd.birthDate);
-    console.log(this.issueAdd.birthDate);
+    //this.issueAdd.birthDate = new Date(this.issueAdd.birthDate);
+    //console.log(this.issueAdd.birthDate);
     //añadir al eventAdd el idUser despues de haberte registrado
-      this.issueService.addUser(this.issueAdd)
+      this.IssueService.addIssue(this.issueAdd)
         .subscribe(() => this.goBack());
     
   }

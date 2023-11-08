@@ -1,1 +1,20 @@
-<p>issue-add works!</p>
+<h2>ADD A ISSUE</h2>
+
+<div>
+      <label for="issue-title">Tittle: </label>
+      <input id="issue-title" [(ngModel)]="issueAdd.title" placeholder="Tittle"/>
+    </div>
+    <div>
+        <label for="issue-description">Description: </label>
+        <input id="issue-description" [(ngModel)]="issueAdd.description" placeholder="Description"/>
+    </div>
+    <div>
+        <label for="issue-priority">Priority: </label>
+        <input id="issue-priority" [(ngModel)]="issueAdd.priority" placeholder="'low' | 'medium' | 'high'"/>
+    </div>
+    <div>
+        <label for="issue-status">Status: </label>
+        <input id="issue-status" [(ngModel)]="issueAdd.status" placeholder="'open' | 'closed'"/>
+    </div>
+    <button type="button" (click)="goBack()">go back</button>
+    <button type="button" (click)="save()">save</button>

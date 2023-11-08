@@ -5,6 +5,7 @@ export interface Issue {
     description: string; 
     priority: 'low' | 'medium' | 'high';
     status: 'open' | 'closed';
+    _id: string;
     reportedBy: string;
     createdAt?: string;
     updatedAt?: string;

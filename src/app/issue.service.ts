@@ -10,6 +10,9 @@ import { catchError, map, tap } from 'rxjs/operators';
 
 @Injectable({ providedIn: 'root' })
 export class IssueService {
+  issueAdd(issueAdd: any) {
+    throw new Error('Method not implemented.');
+  }
 
   constructor(
     private messageService: MessageService,
@@ -87,40 +90,40 @@ private handleError<T>(operation = 'operation', result?: T) {
   }
 
   /** POST: add a new user to the server */
-  addIssue(user: Issue): Observable<Issue> {
+  addIssue(issue: Issue): Observable<Issue> {
     return this.http.post<Issue>(this.issuesUrl, issue, this.httpOptions).pipe(
-      tap((newUser: User) => this.log(`added user w/ id=${newUser._id}`)),
-      catchError(this.handleError<User>('addUser'))
+      tap((newIssue: Issue) => this.log(`added issue w/ id=${newIssue._id}`)),
+      catchError(this.handleError<Issue>('addIssue'))
     );
   }
 
   /** DELETE: delete the user from the server */
-  deleteUser(id: string): Observable<User> {
-    const url = `${this.usersUrl}/${id}`;
+  deleteIssue(id: string): Observable<Issue> {
+    const url = `${this.issuesUrl}/${id}`;
 
-    return this.http.delete<User>(url, this.httpOptions).pipe(
-      tap(_ => this.log(`deleted user id=${id}`)),
-      catchError(this.handleError<User>('deleteUser'))
+    return this.http.delete<Issue>(url, this.httpOptions).pipe(
+      tap(_ => this.log(`deleted issue id=${id}`)),
+      catchError(this.handleError<Issue>('deleteIssue'))
     );
   }
 
     /* GET users whose name contains search term */
-  searchUsers(term: string): Observable<User[]> {
+  searchIssue(term: string): Observable<Issue[]> {
     if (!term.trim()) {
       // if not search term, return empty event array.
       return of([]);
    }
-    return this.http.get<User[]>(`${this.usersUrl}/?name=${term}`).pipe(
+    return this.http.get<Issue[]>(`${this.issuesUrl}/?name=${term}`).pipe(
       tap(x => x.length ?
-        this.log(`found user matching "${term}"`) :
-         this.log(`no users matching "${term}"`)),
-     catchError(this.handleError<User[]>('searchUsers', []))
+        this.log(`found issue matching "${term}"`) :
+         this.log(`no issues matching "${term}"`)),
+     catchError(this.handleError<Issue[]>('searchIssues', []))
    );
   }
 
   /** Log an UserService message with the MessageService */
   private log(message: string) {
-  this.messageService.add(`UserService: ${message}`);
+  this.messageService.add(`IssueService: ${message}`);
   }
 }
 
