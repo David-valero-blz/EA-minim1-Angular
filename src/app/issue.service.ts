@@ -10,9 +10,9 @@ import { catchError, map, tap } from 'rxjs/operators';
 
 @Injectable({ providedIn: 'root' })
 export class IssueService {
-  issueAdd(issueAdd: any) {
-    throw new Error('Method not implemented.');
-  }
+  //issueAdd(issueAdd: any) {
+ //   throw new Error('Method not implemented.');
+ // }
 
   constructor(
     private messageService: MessageService,

@@ -7,6 +7,9 @@ import { EventDetailComponent } from './event-detail/event-detail.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { EventAddComponent } from './event-add/event-add.component';
 import { UserAddComponent } from './user-add/user-add.component';
+import { IssueComponent } from './issue/issue.component';
+import { IssueDetailComponent } from './issue-detail/issue-detail.component';
+import { IssueAddComponent } from './issue-add/issue-add.component';
 
 
 //Declaración de rutas para añadir navegación entre componentes
@@ -14,11 +17,14 @@ const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'events', component: EventsComponent },
   { path: 'users', component: UsersComponent },
+  { path: 'issues', component: IssueComponent },
   { path: 'detailEvent/:id', component: EventDetailComponent },
   { path: 'detailUser/:id', component: UserDetailComponent },
+  { path: 'detailIssue/:id', component: IssueDetailComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'eventAdd', component: EventAddComponent },
   { path: 'userAdd', component: UserAddComponent },
+  { path: 'issueAdd', component: IssueAddComponent },
   
 
 

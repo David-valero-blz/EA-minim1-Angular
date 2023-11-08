@@ -1,0 +1,13 @@
+<!--Muestra detalles del 'user' seleccionado con *ngIf-->
+<div *ngIf="issue">
+    <h2>{{issue.title | uppercase}} Details</h2>
+    <div><span>id: </span>{{issue._id}}</div>
+    <!-- Permite editar el nombre del user mediante Two-Way Binding-->
+    <div>
+      <label for="issue">Title: </label>
+      <input id="issue" [(ngModel)]="issue.title" placeholder="Title"/>
+    </div>
+    <!--------------------------------------------------------------->
+    <button type="button" (click)="goBack()">go back</button>
+    <button type="button" (click)="save()">save</button>
+  </div>

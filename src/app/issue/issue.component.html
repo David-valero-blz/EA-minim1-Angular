@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <style>
+      h1 {
+        font-family: 'Montserrat', sans-serif;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>My Issues</h1>
+  </body>
+  </html>
+
+<div>
+  <label for="new-issue">Issue: </label>
+  <input id="new-issue" #title />
+
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button [routerLink]="['/addIssue']"> Add User </button>
+
+</div>
+
+<ul class="issue">
+  <li *ngFor="let issue of issues">
+    <a routerLink="/detailissue/{{issue._id}}">
+      <span class="badge">{{issue.title}}</span> 
+    </a>
+    <button type="button" class="delete" title="delete issue"
+      (click)="delete(issue)">x</button>
+  </li>
+</ul>

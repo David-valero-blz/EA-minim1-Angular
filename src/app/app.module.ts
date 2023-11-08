@@ -22,6 +22,8 @@ import { UserAddComponent } from './user-add/user-add.component';
 import { CabeceraComponent } from './cabecera/cabecera.component';
 import { IssueListComponent } from './issue-list/issue-list.component';
 import { IssueAddComponent } from './issue-add/issue-add.component';
+import { IssueComponent } from './issue/issue.component';
+import { IssueDetailComponent } from './issue-detail/issue-detail.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { IssueAddComponent } from './issue-add/issue-add.component';
     UserAddComponent,
     CabeceraComponent,
     IssueListComponent,
-    IssueAddComponent
+    IssueAddComponent,
+    IssueComponent,
+    IssueDetailComponent
 ],
   imports: [
     BrowserModule,
